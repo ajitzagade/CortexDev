@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# Ajit Zagade — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Production-ready personal site for a Senior Full Stack Engineer & Engineering Leader, built with React, Vite, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion, and React Router.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20+ recommended
+- npm 10+
 
-## React Compiler
+## Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Command       | Description                    |
+| ------------- | ------------------------------ |
+| `npm run dev` | Start Vite dev server          |
+| `npm run build` | Typecheck + production build |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint                   |
+
+## Environment
+
+Copy `.env.example` to `.env` (optional for local SEO URLs):
+
+```bash
+cp .env.example .env
 ```
+
+Set `VITE_SITE_URL` to your deployed origin (no trailing slash). This powers canonical and Open Graph `og:url` / `og:image` absolute URLs in `src/components/seo.tsx`.
+
+## Resume & assets
+
+- Add your PDF as `public/resume.pdf` so **Download resume** and navbar links work.
+- Add `public/og-image.png` (recommended 1200×630) for social previews; update `site.ogImage` in `src/lib/site.ts` if you use a different filename.
+
+## Customize content
+
+- **Profile, links, copy**: `src/lib/site.ts`
+- **Sections**: `src/sections/`
+- **Layout**: `src/components/layout/`
+
+## Performance
+
+- **Code splitting**: Below-the-fold homepage content loads in a lazy chunk (`src/pages/home-below-fold.tsx`) with a lightweight skeleton while it loads.
+- **Vendor chunks**: `vite.config.ts` splits React, Framer Motion, React Router, lucide, Base UI, and react-helmet-async for caching and parallel loading.
+
+## Deploy on Vercel
+
+1. Push the repository to GitHub/GitLab/Bitbucket.
+2. In [Vercel](https://vercel.com), **Import** the repo.
+3. Framework preset: **Vite** (auto-detected). Build command: `npm run build`, output: `dist`.
+4. Add environment variable `VITE_SITE_URL` to your production URL.
+5. Deploy.
+
+This app is a static SPA. `vercel.json` includes a rewrite so client-side routes (e.g. `/blog`) resolve correctly on refresh.
+
+## Tech stack
+
+- React 19 + Vite 8 + TypeScript
+- Tailwind CSS v4 + shadcn/ui (Base UI primitives)
+- React Router 7, Framer Motion, react-helmet-async
+
+## License
+
+Private / personal use — adjust as needed.

@@ -1,60 +1,58 @@
 import { motion } from 'framer-motion'
+import { HoverLiftCard } from '@/components/hover-lift-card'
 import { MotionSection } from '@/components/motion-section'
-import { SectionHeading } from '@/components/section-heading'
+import { BcSectionTitle } from '@/components/bc-section-title'
 import { experience } from '@/lib/site'
 
 export function Experience() {
   return (
-    <MotionSection id="experience" className="scroll-mt-24 bg-muted/30 px-4 py-20 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="Experience"
-          title="Timeline"
-          subtitle="Leadership and delivery across enterprise platforms and regulated domains."
+    <MotionSection id="experience" className="scroll-mt-28 py-20 lg:scroll-mt-12">
+      <BcSectionTitle
+        num="04"
+        title="Experience"
+        subtitle="Leadership and delivery across enterprise platforms and regulated domains."
+      />
+      <div className="relative">
+        <div
+          aria-hidden
+          className="bg-bc-line absolute top-0 bottom-0 left-[7px] w-px md:left-2"
         />
-        <div className="relative">
-          <div
-            aria-hidden
-            className="bg-border absolute top-0 bottom-0 left-[11px] w-px sm:left-4"
-          />
-          <ul className="space-y-10">
-            {experience.map((job, i) => (
-              <motion.li
-                key={job.company + job.period}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06, duration: 0.4 }}
-                className="relative pl-10 sm:pl-14"
+        <ul className="space-y-10">
+          {experience.map((job, i) => (
+            <motion.li
+              key={job.company + job.period}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05, duration: 0.35 }}
+              className="relative list-none pl-10 md:pl-14"
+            >
+              <span
+                className={
+                  job.featured
+                    ? 'bg-bc-accent absolute top-6 left-0 z-[2] size-2.5 rounded-full ring-4 ring-[#0a192f] md:left-1 md:top-7'
+                    : 'bg-bc-slate absolute top-6 left-0.5 z-[2] size-2 rounded-full md:left-1.5 md:top-7'
+                }
+              />
+              <HoverLiftCard
+                intensity="subtle"
+                className="hover:border-bc-accent/35 p-5 md:p-6"
               >
-                <span
-                  className={
-                    job.featured
-                      ? 'bg-primary ring-primary/30 absolute top-1.5 left-0 size-3 rounded-full ring-4 sm:top-2 sm:left-1'
-                      : 'bg-muted-foreground absolute top-2 left-0.5 size-2.5 rounded-full sm:left-1.5'
-                  }
-                />
-                <div className="border-border/60 bg-card/50 rounded-xl border p-5 shadow-sm backdrop-blur-sm sm:p-6">
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                    <h3 className="font-display text-foreground text-lg font-semibold">
-                      {job.company}
-                    </h3>
-                    <p className="text-primary text-sm font-medium tabular-nums">
-                      {job.period}
-                    </p>
-                  </div>
-                  <p className="text-muted-foreground mt-1 text-sm">{job.role}</p>
-                  <p className="text-muted-foreground/80 text-xs">{job.location}</p>
-                  <ul className="text-muted-foreground mt-4 list-inside space-y-2 text-sm leading-relaxed">
-                    {job.bullets.map((b) => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                  <h3 className="text-bc-heading text-lg font-semibold">{job.company}</h3>
+                  <p className="text-bc-accent font-mono text-sm tabular-nums">{job.period}</p>
                 </div>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
+                <p className="text-bc-slate mt-1 text-sm">{job.role}</p>
+                <p className="text-bc-slate/80 text-xs">{job.location}</p>
+                <ul className="text-bc-slate mt-4 space-y-2 text-sm leading-relaxed">
+                  {job.bullets.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+              </HoverLiftCard>
+            </motion.li>
+          ))}
+        </ul>
       </div>
     </MotionSection>
   )

@@ -1,46 +1,56 @@
+import { HoverLiftCard } from '@/components/hover-lift-card'
 import { MotionSection } from '@/components/motion-section'
-import { SectionHeading } from '@/components/section-heading'
+import { BcSectionTitle } from '@/components/bc-section-title'
 import { site } from '@/lib/site'
 
 export function About() {
   return (
-    <MotionSection id="about" className="scroll-mt-24 px-4 py-20 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="About"
-          title="Engineering at scale, with ownership end-to-end"
-          subtitle={`${site.experienceYears} years shipping products across fintech, healthcare IoT, and real-time collaboration — leading teams of 10–15 engineers while staying hands-on with architecture and delivery.`}
-        />
-        <div className="border-border/60 bg-card/30 grid gap-8 rounded-2xl border p-8 shadow-sm backdrop-blur-sm md:grid-cols-2 md:p-10">
-          <div className="space-y-4 text-base leading-relaxed">
-            <p className="text-foreground">
-              I have led teams of <strong className="font-semibold">10–15 engineers</strong>,
-              owned roadmaps and technical direction, and delivered{' '}
-              <strong className="font-semibold">large-scale systems</strong> under real
-              production pressure.
-            </p>
-            <p className="text-muted-foreground">
-              My work spans <strong className="text-foreground/90 font-medium">Fintech</strong>,{' '}
-              <strong className="text-foreground/90 font-medium">Healthcare IoT</strong>, and{' '}
-              <strong className="text-foreground/90 font-medium">Video Conferencing</strong> —
-              with a consistent focus on architecture, scalability, and team health.
-            </p>
-          </div>
-          <ul className="text-muted-foreground space-y-3 text-sm leading-relaxed">
+    <MotionSection id="about" className="scroll-mt-28 py-20 lg:scroll-mt-12">
+      <BcSectionTitle
+        num="01"
+        title="About"
+        subtitle={`${site.experienceYears} years shipping products across fintech, healthcare IoT, and real-time collaboration — leading teams of 10–15 engineers while staying hands-on with architecture and delivery.`}
+      />
+      <div className="text-bc-slate space-y-6 text-base leading-relaxed md:grid md:grid-cols-2 md:gap-10 md:space-y-0">
+        <div className="space-y-4">
+          <p className="text-bc-heading">
+            I have led teams of{' '}
+            <strong className="font-semibold text-bc-accent">10–15 engineers</strong>, owned
+            roadmaps and technical direction, and delivered{' '}
+            <strong className="text-bc-heading font-semibold">large-scale systems</strong> under
+            real production pressure.
+          </p>
+          <p>
+            My work spans{' '}
+            <span className="text-bc-heading font-medium">Fintech</span>,{' '}
+            <span className="text-bc-heading font-medium">Healthcare IoT</span>, and{' '}
+            <span className="text-bc-heading font-medium">Video Conferencing</span> — with a
+            consistent focus on architecture, scalability, and team health.
+          </p>
+        </div>
+        <HoverLiftCard
+          intensity="subtle"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+          className="bg-bc-light-navy/50 hover:border-bc-accent/35 p-6 font-mono text-sm"
+        >
+          <ul className="space-y-4">
             <li className="flex gap-3">
-              <span className="bg-primary/20 text-primary mt-1.5 size-1.5 shrink-0 rounded-full" />
+              <span className="text-bc-accent mt-0.5">▹</span>
               System design, service boundaries, and pragmatic trade-offs for velocity.
             </li>
             <li className="flex gap-3">
-              <span className="bg-primary/20 text-primary mt-1.5 size-1.5 shrink-0 rounded-full" />
+              <span className="text-bc-accent mt-0.5">▹</span>
               Production rollouts, observability, and operational maturity.
             </li>
             <li className="flex gap-3">
-              <span className="bg-primary/20 text-primary mt-1.5 size-1.5 shrink-0 rounded-full" />
+              <span className="text-bc-accent mt-0.5">▹</span>
               Cross-functional alignment with product, design, and infrastructure.
             </li>
           </ul>
-        </div>
+        </HoverLiftCard>
       </div>
     </MotionSection>
   )

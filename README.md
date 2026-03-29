@@ -37,7 +37,7 @@ Set `VITE_SITE_URL` to your deployed origin (no trailing slash). This powers can
 
 ## Resume & assets
 
-- Add your PDF as `public/resume.pdf` so **Download resume** and navbar links work.
+- A placeholder PDF ships as `public/resume.pdf` (downloads as **Ajit-Zagade-Resume.pdf**). Replace it with your real CV and redeploy.
 - Add `public/og-image.png` (recommended 1200×630) for social previews; update `site.ogImage` in `src/lib/site.ts` if you use a different filename.
 
 ## Customize content

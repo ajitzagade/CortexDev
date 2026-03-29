@@ -13,14 +13,21 @@ export const site = {
   ogImage: '/og-image.png',
 } as const
 
+/** Numbered sidebar navigation */
 export const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#leadership', label: 'Leadership' },
-  { href: '#ai', label: 'AI & Automation' },
-  { href: '#contact', label: 'Contact' },
+  { id: 'about', href: '#about', label: 'About', num: '01' },
+  { id: 'skills', href: '#skills', label: 'Skills', num: '02' },
+  { id: 'projects', href: '#projects', label: 'Projects', num: '03' },
+  { id: 'experience', href: '#experience', label: 'Experience', num: '04' },
+  { id: 'leadership', href: '#leadership', label: 'Leadership', num: '05' },
+  { id: 'ai', href: '#ai', label: 'AI & Automation', num: '06' },
+  { id: 'contact', href: '#contact', label: 'Contact', num: '07' },
+] as const
+
+/** Sections observed for scroll-spy (includes hero) */
+export const scrollSpySectionIds = [
+  'top',
+  ...navLinks.map((l) => l.id),
 ] as const
 
 export const skillCategories = [

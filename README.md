@@ -59,7 +59,7 @@ Set `VITE_SITE_URL` to your deployed origin (no trailing slash). This powers can
 4. Add environment variable `VITE_SITE_URL` to your production URL.
 5. Deploy.
 
-This app is a static SPA. `vercel.json` includes a rewrite so client-side routes (e.g. `/blog`) resolve correctly on refresh.
+This app is a static SPA. `vercel.json` includes a rewrite so the app shell resolves correctly on refresh for any path.
 
 ## Tech stack
 

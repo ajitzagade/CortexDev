@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { Mail, Menu, MessageCircle } from 'lucide-react'
 import { GitHubIcon, LinkedInIcon } from '@/components/icons/brand-icons'
 import { buttonVariants } from '@/components/ui/button'
@@ -46,10 +45,8 @@ function NavLink({
 }
 
 export function Sidebar() {
-  const { pathname } = useLocation()
-  const isBlog = pathname === '/blog'
   const scrollActiveId = useActiveSection(scrollSpySectionIds)
-  const activeId = pathname === '/' ? scrollActiveId : null
+  const activeId = scrollActiveId
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const closeMobile = () => setMobileOpen(false)
@@ -59,27 +56,13 @@ export function Sidebar() {
       {navLinks.map((l) => (
         <NavLink
           key={l.id}
-          href={pathname === '/' ? l.href : `/${l.href}`}
+          href={l.href}
           label={l.label}
           num={l.num}
-          active={!isBlog && activeId === l.id}
+          active={activeId === l.id}
           onNavigate={closeMobile}
         />
       ))}
-      <Link
-        to="/blog"
-        onClick={closeMobile}
-        className={cn(
-          'font-mono text-sm tracking-wide transition-colors',
-          'border-l-2 py-2 pl-4',
-          isBlog
-            ? 'border-bc-accent text-bc-heading'
-            : 'border-transparent text-bc-slate hover:text-bc-heading',
-        )}
-      >
-        <span className="text-bc-accent mr-2">08.</span>
-        Blog
-      </Link>
     </nav>
   )
 

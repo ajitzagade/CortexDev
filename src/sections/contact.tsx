@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail } from 'lucide-react'
+import { ArrowUpRight, Mail, MessageCircle } from 'lucide-react'
 import { GitHubIcon, LinkedInIcon } from '@/components/icons/brand-icons'
 import { HoverLiftCard } from '@/components/hover-lift-card'
 import { MotionSection } from '@/components/motion-section'
@@ -37,6 +37,15 @@ export function Contact() {
           Let’s build something impactful.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href={site.whatsappUrl}
+            target="_blank"
+            rel="noreferrer noopener"
+            className={cn(cta)}
+          >
+            <MessageCircle className="size-4" />
+            WhatsApp ({site.phone})
+          </a>
           <a href={`mailto:${site.email}`} className={cn(cta)}>
             <Mail className="size-4" />
             Email

@@ -45,6 +45,17 @@ export function Hero() {
         <p className="font-mono text-sm">
           {site.location} · {site.experienceYears} years building products
         </p>
+        <p className="font-mono text-sm">
+          <a
+            href={site.whatsappUrl}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-bc-accent hover:text-bc-heading transition-colors underline-offset-4 hover:underline"
+          >
+            {site.phone}
+          </a>
+          <span className="text-bc-slate/80"> · WhatsApp</span>
+        </p>
       </motion.div>
       <motion.div
         className="flex flex-wrap gap-x-8 gap-y-3 pt-2"

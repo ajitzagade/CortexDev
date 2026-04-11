@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu } from 'lucide-react'
-import { Mail } from 'lucide-react'
+import { Mail, Menu, MessageCircle } from 'lucide-react'
 import { GitHubIcon, LinkedInIcon } from '@/components/icons/brand-icons'
 import { buttonVariants } from '@/components/ui/button'
 import {
@@ -110,6 +109,15 @@ export function Sidebar() {
         aria-label="Email"
       >
         <Mail className="size-5" />
+      </a>
+      <a
+        href={site.whatsappUrl}
+        target="_blank"
+        rel="noreferrer noopener"
+        className="text-bc-slate hover:text-bc-accent transition-colors"
+        aria-label="WhatsApp"
+      >
+        <MessageCircle className="size-5" />
       </a>
     </div>
   )

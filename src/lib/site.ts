@@ -1,7 +1,10 @@
 export const site = {
   name: 'Ajit Zagade',
   title: 'Senior Full Stack Engineer | Engineering Leader',
-  location: 'Pune, India',
+  location: 'Pune, Maharashtra, India',
+  phone: '+91 8007755527',
+  /** Opens chat in WhatsApp (wa.me uses digits only, no +). */
+  whatsappUrl: 'https://wa.me/918007755527',
   experienceYears: '12+',
   headline:
     'Building Scalable Systems & Leading High-Impact Engineering Teams',
@@ -69,30 +72,45 @@ export const projects = [
     stack: ['WebRTC', 'Node.js', 'React', 'System Design'],
     impact:
       'Owned core platform delivery; scaled features used by millions of users.',
+    imageSrc: '/projects/jiomeet.png',
+    links: {
+      github: '',
+      live: 'https://jiomeetpro.jio.com/',
+      liveExtra: [
+        { label: 'JioMeet Enterprise', href: 'https://enterprise.jiomeet.com/' },
+      ],
+    },
   },
   {
     title: 'Fintech Wallet Platform',
     description:
-      'End-to-end wallet experience for payments, recharge, and bookings.',
+      'End-to-end wallet experience for payments, recharge, and bookings on React Native and native Android (Kotlin).',
     highlights: [
       'Integrated Razorpay, PayPal, Braintree',
-      'Resilient transaction workflows & reconciliation',
+      'Resilient transaction workflows, reconciliation, and mobile clients (Kotlin/Android)',
     ],
-    stack: ['Node.js', 'React Native', 'PostgreSQL', 'Payments APIs'],
+    stack: ['Node.js', 'React Native', 'Android (Kotlin)', 'PostgreSQL', 'Payments APIs'],
     impact:
       'High-volume transaction paths with measurable uptime and throughput improvements.',
+    imageSrc: '/projects/project-placeholder.png',
+    links: { github: 'https://github.com/ajitzagade', live: '' },
   },
   {
     title: 'Healthcare IoT Platform',
     description:
-      'BLE-connected medical devices with live monitoring dashboards.',
+      'BLE-connected medical devices with live monitoring dashboards; native Android (Kotlin) alongside React Native.',
     highlights: [
       'ECG, BP, Glucose integrations',
-      'Real-time health data visualization',
+      'Real-time health data visualization and device-side Android/Kotlin work',
     ],
-    stack: ['BLE', 'React Native', 'Node.js', 'MongoDB'],
+    stack: ['BLE', 'React Native', 'Android (Kotlin)', 'Node.js', 'MongoDB'],
     impact:
       'Reduced time-to-insight for clinicians with reliable device telemetry.',
+    imageSrc: '/projects/healthcare-yolohealth.png',
+    links: {
+      github: '',
+      live: 'https://yolohealth.in/',
+    },
   },
   {
     title: 'E-commerce Mobile App',
@@ -105,15 +123,21 @@ export const projects = [
     stack: ['React Native', 'WebSockets', 'Node.js'],
     impact:
       'Improved operational throughput and customer response times.',
+    imageSrc: '/projects/project-placeholder.png',
+    links: {
+      github: '',
+      live:
+        'https://play.google.com/store/apps/details?id=com.canvera.photographer&hl=en_IN',
+    },
   },
 ] as const
 
 export const experience = [
   {
-    company: 'Reliance Jio',
-    role: 'Engineering Leadership & Architecture',
-    period: '2019 — Present',
-    location: 'India',
+    company: 'Reliance Jio Infocomm Ltd.',
+    role: 'Lead Engineer / Engineering Team Lead',
+    period: 'Feb 2019 — Present',
+    location: 'Pune, Maharashtra, India',
     bullets: [
       'Led a team of 14 engineers across frontend, mobile, and platform.',
       'Owned architecture, delivery, and production stability for JioMeet.',
@@ -122,10 +146,10 @@ export const experience = [
     featured: true,
   },
   {
-    company: 'HealthATM',
-    role: 'Full Stack / Mobile Lead',
-    period: 'Earlier tenure',
-    location: 'India',
+    company: 'HealthATM India Pvt. Ltd.',
+    role: 'Senior Full Stack Developer',
+    period: 'Mar 2017 — Feb 2019',
+    location: 'Pune, Maharashtra, India',
     bullets: [
       'Delivered fintech and healthcare consumer apps at scale.',
       'Hands-on with device integrations and secure data pipelines.',
@@ -133,13 +157,24 @@ export const experience = [
     featured: false,
   },
   {
-    company: 'Earlier companies',
-    role: 'Software Engineer → Senior Engineer',
-    period: 'Prior to above',
-    location: 'India',
+    company: 'Crystal Hitech IT Solutions Pvt. Ltd.',
+    role: 'Sr. Android Developer',
+    period: 'Sept 2015 — Feb 2017',
+    location: 'Pune, Maharashtra, India',
     bullets: [
-      'Progression across product engineering, mobile, and backend services.',
-      'Consistent focus on quality, performance, and pragmatic delivery.',
+      'Built and shipped Android features with a focus on performance and reliability.',
+      'Collaborated across product and backend teams to deliver end-to-end experiences.',
+    ],
+    featured: false,
+  },
+  {
+    company: 'Mindscrub Technologies',
+    role: 'Software Developer',
+    period: 'July 2014 — August 2015',
+    location: 'Pune, Maharashtra, India',
+    bullets: [
+      'Delivered product features across the stack with strong attention to quality.',
+      'Contributed to iterative releases and pragmatic engineering practices.',
     ],
     featured: false,
   },

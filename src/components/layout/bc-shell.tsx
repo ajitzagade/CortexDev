@@ -18,11 +18,11 @@ export function BcShell({ children }: { children: ReactNode }) {
         <div className="min-h-screen pt-[72px] lg:pt-0">
           <main
             id="content"
-            className="mx-auto max-w-3xl px-6 py-12 lg:px-12 lg:py-24 xl:max-w-[880px]"
+            className="mx-auto max-w-3xl px-6 py-12 lg:max-w-5xl lg:px-12 lg:py-24 xl:max-w-6xl"
           >
             {children}
           </main>
-          <footer className="text-bc-slate/70 mx-auto max-w-3xl px-6 pb-10 text-center font-mono text-xs lg:px-12 xl:max-w-[880px]">
+          <footer className="text-bc-slate/70 mx-auto max-w-3xl px-6 pb-10 text-center font-mono text-xs lg:max-w-5xl lg:px-12 xl:max-w-6xl">
             <p>© {new Date().getFullYear()} {site.name}</p>
           </footer>
         </div>
